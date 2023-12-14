@@ -41,9 +41,8 @@ names = [("Gerardo", "Huerta"),
         ("Alejandro", "Huerta"),
         ("Alejandra", "Escallada"),
         ("Arnulfo", "Huerta"),
-        ("Lilia", "Hernández"), 
-        ("Mauro", "Galindo")
-        ]
+        ("Lilia", "Hernandez"), 
+        ("Mauro", "Galindo")]
 
 compareLastName name1 name2 = if lastName1 > lastName2
     then GT
@@ -60,3 +59,34 @@ compareFirstName name1 name2 = if firstName1 > firstName2
       else EQ
   where firstName1 = fst name1
         firstName2 = fst name2
+
+
+-- addressLetter name location = nameText ++ "-" ++ location
+--  where nameText = (fst name)++ " " ++ (snd name)
+
+sOfficename name = if lastName < "L"
+    then nameText
+      ++ " - PO Box 1234 - San Francisco, CA, 94111"
+    else nameText 
+      ++ " - PO Box 1010 - San Fracisco, CA, 94109"
+  where lastName = snd name
+        nameText = (fst name) ++ " " ++ lastName
+
+nyOffice name = nameText ++ ": PO Box 789 -  New York, NY, 10013"
+  where nameText = (fst name) ++ " " ++ (snd name)
+
+renoOffice name = nameText ++ " - PO Box 456 - Reno, NV 89523"
+  where nameText = (snd name)
+
+getLocationFunction location = case location of 
+  "ny" -> nyOffice
+  "sf" -> sOfficename
+  "reno" -> renoOffice
+  _ -> (\name -> (fst name) ++ " " ++ (snd name))
+
+addressLetter name location = locationFunction name 
+  where locationFunction = getLocationFunction location 
+
+-- Ejecicios   
+-- Anything that can be compared in Haskell (for example, [Char], which you use for the names in your name tuples) can be compared with a function called compare. The compare function returns GT, LT, or EQ. Rewrite compareLastNames by using compare.
+-- Define a new location function for Washington, DC and add it to getLocation-Function. In the DC function, everyone’s names must be followed by Esq.
