@@ -38,7 +38,12 @@ author = ("Gerardo", "Huerta")
 -- fst , snd
 names = [("Gerardo", "Huerta"),
         ("Carlos", "Huerta"), 
-        ("Alejandro", "Huerta")]
+        ("Alejandro", "Huerta"),
+        ("Alejandra", "Escallada"),
+        ("Arnulfo", "Huerta"),
+        ("Lilia", "Hernández"), 
+        ("Mauro", "Galindo")
+        ]
 
 compareLastName name1 name2 = if lastName1 > lastName2
     then GT
