@@ -25,6 +25,12 @@ ifEvenNegative = ifEven negative
 -- ifEvenLambdaCube = ifEven (\x -> x ^ 3)
 ifEvenLambdaCube = ifEven (^ 3)
 
-getIfEven f = (\x -> ifEven f x)
+-- getIfEven f = (\x -> ifEven f x)
+getIfEven = ifEven
 
 ifEvenInc = getIfEven inc
+
+getRequestURL host apikey resource id = host ++ "/" ++ resource ++ "/" ++ id ++ "?token=" ++ apikey
+genHostRequestBuilder host  = (\apikey resource id -> getRequestURL host apikey resource id)
+exampleBuilder = genHostRequestBuilder "https://example.com" "1337hAsk3ll"
+genApiRequestBuilder hostBuilder apikey = (\resource id -> hostBuilder apikey resource id)
