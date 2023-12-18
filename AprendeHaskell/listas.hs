@@ -31,3 +31,15 @@ sumPrueba = sum lista
  --productPrueba = product lista
 --elem nos dice si un elemento está en la lista o no
 elemPrueba = elem 4 lista 
+-- Rangos
+lista1al20 = [1..20]
+lista20al1 = [20, 19..1]
+-- Funciones de listas infinitas 
+listainfinita = take 13 [13, 26..]
+-- Cycle: crea una repetición de la lista infinitamente por lo que hay que limitarla 
+cycleprueba = take 10 (cycle lista)
+--repeat toma un elemento y lo repite infinitamente 
+repeatPrueba = take 10 (repeat "c")
+pares2al10 = [x*2 | x <- [1..10], x*2 >= 12]
+numeros1al1007mod30 = [x|x <- [50..100], mod x 7 == 3]
+
