@@ -32,5 +32,7 @@ ifEvenInc = getIfEven inc
 
 getRequestURL host apikey resource id = host ++ "/" ++ resource ++ "/" ++ id ++ "?token=" ++ apikey
 genHostRequestBuilder host  = (\apikey resource id -> getRequestURL host apikey resource id)
-exampleBuilder = genHostRequestBuilder "https://example.com" "1337hAsk3ll"
-genApiRequestBuilder hostBuilder apikey = (\resource id -> hostBuilder apikey resource id)
+exampleBuilder = genHostRequestBuilder "https://example.com" 
+genApiRequestBuilder hostBuilder apikey resource = (\id -> hostBuilder apikey resource id)
+myExampleURLBuilder = genApiRequestBuilder exampleBuilder "1337hAsk3ll"
+
