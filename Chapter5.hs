@@ -2,6 +2,3 @@
 teams = ["red", "yellow", "orange", "blue", "purple"]
 list = [1,2,3]
 list2 = [[1,2],[3,4]]
--- Borrame
-main::IO()
-main = print "Hola mundo"
