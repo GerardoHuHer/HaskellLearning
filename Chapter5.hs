@@ -38,3 +38,18 @@ takeLast = take 1 (reverse [1..100])
 zipList = zip list list2
 --cylce 
 ones n = take n (cycle [1])
+assingToGroups n aList = zip groups aList
+    where groups = cycle [1..n]
+
+myRepeat times = (cycle [times])
+
+subseq start end list = drop start' $ take end' list
+    where 
+        start' = max 0 start 
+        end' = min (length list) end
+
+inFirstHalf elem list = if list !! elem <= mitad 
+        then True 
+        else False
+    where 
+        mitad = length(list) `div` 2
