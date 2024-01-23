@@ -34,3 +34,7 @@ respond phrase = if valor
 -- Take and drop
 takeList = take 5 [2,4 .. 100]
 takeLast = take 1 (reverse [1..100])
+
+zipList = zip list list2
+--cylce 
+ones n = take n (cycle [1])
