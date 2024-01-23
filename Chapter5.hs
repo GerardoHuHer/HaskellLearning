@@ -1,3 +1,4 @@
+import Data.List (elemIndex)
 -- This topic (list) is covered from page 69 to
 teams::[String]
 teams = ["red", "yellow", "orange", "blue", "purple"]
@@ -48,8 +49,10 @@ subseq start end list = drop start' $ take end' list
         start' = max 0 start 
         end' = min (length list) end
 
-inFirstHalf elem list = if list !! elem <= mitad 
-        then True 
-        else False
+inFirstHalf elem list = maybePos <= mitad 
     where 
-        mitad = length(list) `div` 2
+        mitad = length list `div` 2
+        maybePos = case elemIndex elem list of
+            Just pos -> pos
+            Nothing -> -1
+
