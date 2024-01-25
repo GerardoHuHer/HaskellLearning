@@ -58,6 +58,18 @@ sayAmount n = case n of
   1 -> "one"
   2 -> "two"
   n -> "a bunch"
-factorial::Int -> Int
+factorial :: Int -> Int
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
+
+myTail :: [a] -> [a]
+myTail [] = []
+myTail (_:xs) = xs 
+
+myGCDOpt :: Int -> Int -> Int
+myGCDOpt num 1 = num
+myGCDOPt a b
+    | remainder == 0 = b
+    | otherwise = myGCDOpt b remainder
+  where
+    remainder = a `mod` b
