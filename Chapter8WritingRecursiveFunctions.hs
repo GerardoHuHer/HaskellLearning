@@ -16,8 +16,8 @@ myTake n (x:xs) = x:rest
     where rest = myTake (n - 1) xs
 
 -- Ejercicio de una conjetura de cola
-conjeturaCola :: Int -> [Int] -> [Int]
-conjeturaCola 1 lista = reverse (1:lista)
-conjeturaCola num lista 
-        | even num = conjeturaCola (div num 2) (num:lista)
-        | odd num = conjeturaCola (3 *num + 1) (num:lista)
+conjeturaCollatz :: Int -> [Int] -> [Int]
+conjeturaCollatz 1 lista = reverse (1:lista)
+conjeturaCollatz num lista 
+        | even num = conjeturaCollatz (div num 2) (num:lista)
+        | odd num = conjeturaCollatz (3 *num + 1) (num:lista)
