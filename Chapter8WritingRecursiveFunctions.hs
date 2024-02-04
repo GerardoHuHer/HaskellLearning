@@ -21,8 +21,6 @@ conjeturaCollatz 1 lista = reverse (1:lista)
 conjeturaCollatz num lista 
         | even num = conjeturaCollatz (div num 2) (num:lista)
         | odd num = conjeturaCollatz (3 *num + 1) (num:lista)
-<<<<<<< HEAD
-=======
 
 conjeturaCollatzOpt :: Int -> [Int]
 conjeturaCollatzOpt 1 = 1:[]
@@ -83,4 +81,3 @@ fibonacci :: Int -> Int
 fibonacci 0 = 1
 fibonacci 1 = 1
 fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
->>>>>>> 3dbae3a025f98f1f3443ba80ceac7cfd32f7c4fb
