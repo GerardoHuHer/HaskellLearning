@@ -1,5 +1,4 @@
 -- Prueba
-
 myDrop 0 xs = xs
 myDrop n ys = case ys of
     x:xs -> myDrop (x -1) xs
